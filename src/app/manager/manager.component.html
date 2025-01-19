@@ -1,0 +1,135 @@
+<body>
+
+    <header>
+        <div class="main-container">
+            <div class="headerOfPage">
+                <h1>მენეჯერი</h1>
+                <div class="exit" [routerLink]="['']">
+                    <h1>სისტემიდან გასვლა</h1>
+                    <img src="assets/exit.png" alt="exit">
+                </div>
+            </div>
+
+            <div class="listOfBooks">
+                <div class="img-logo">
+                  <img src="assets/logo.svg" alt="">                    
+                </div>
+
+                <h3>წიგნების ჩამონათვალი</h3>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="inner-container">
+            <div class="table">
+                <p-table [value]="items">
+                    <ng-template pTemplate="header">
+                    <tr>
+                        <th>დასახელება</th>
+                        <th>ავტორი</th>
+                        <th>ფასი</th>
+                        <th>რაოდენობა</th>
+                    </tr>
+
+                    <tr style="background-color: white; height: 50px; border: 1px solid black;">
+                        <th>
+                            <p-columnFilter type="text" field="title" placeholder="მოძებნე დასახელება" ariaLabel="Filter Title"></p-columnFilter>
+                        </th>
+
+                        <th>
+                            <p-columnFilter type="text" field="author" placeholder="მოძებნე ავტორი" ariaLabel="Filter Author"></p-columnFilter>
+                        </th>
+
+                        <th>
+                            <p-columnFilter type="text" field="price" placeholder="მოძებნე ფასი" ariaLabel="Filter Price"></p-columnFilter>
+                        </th>
+
+                        <th>
+                            <p-columnFilter type="text" field="quantity" placeholder="მოძებნე რაოდენობა" ariaLabel="Filter Quantity"></p-columnFilter>
+                        </th>
+
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item>
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.author }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                    </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-book__container">
+        <p-button label="+ წიგნის დამატება" (click)="togleAddButtonModal()"></p-button>
+    </div>
+
+
+
+
+<div (click)="togleAddButtonModal()"  *ngIf="isAddButtonModalOpen" class="modal-overlay"></div>
+<div class="showAddBook-container" (toggle)="togleAddButtonModal()" *ngIf="isAddButtonModalOpen">
+    <div class="form">
+        <div class="header-showAddBook">
+            <h1>+ წიგნის დამატება:</h1> 
+            <div class="close"  (click)="togleAddButtonModal()" *ngIf="isAddButtonModalOpen"><img src="assets/close.svg" alt=""></div>           
+        </div>
+        
+        <div class="row">
+            <div class="field">
+                <p>დასახელება</p>
+                <input type="text" pInputText [(ngModel)]="newBook.title" />
+            </div>
+            <div class="field">
+                <p>ფასი</p>
+                <!-- <input type="text" pInputText [(ngModel)]="newBook.title" /> -->
+
+
+                <div class="price-box">
+                    <p-input-number [(ngModel)]="newBook.price" ></p-input-number>                    
+                    <div class="money-logo">
+                        <img src="assets/lari.svg" alt="">
+                    </div>                    
+                </div>
+
+            </div>
+         </div>
+
+        <div class="row">
+            <div class="field">
+                <p>ავტორი</p>
+                <input type="text" pInputText [(ngModel)]="newBook.title" />
+            </div>
+            <div class="field">
+                <p>რაოდენობა</p>
+                <div class="quantity-box">
+                    <p-button icon="pi pi-minus" class="decrement" (click)="decrementQuantity()">-</p-button>
+                    <p-input-number class="input-quantity" [(ngModel)]="newBook.quantity"></p-input-number>
+                    <p-button icon="pi pi-plus" class="increment" (click)="incrementQuantity()">+</p-button>                     
+                </div>
+            </div>
+        </div>
+    <div class="btn-addBook">
+         <p-button label="დამატება"><img src="assets/done.svg" alt=""></p-button>
+    </div>
+    </div>
+
+   
+</div>
+
+<div class="showUpdate-container">
+
+    
+    
+</div>
+
+
+
+
+</body>
+
+

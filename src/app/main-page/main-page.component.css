@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+
+
+}
+
+.page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%; 
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box img{
+    width: 40px;
+    height: 40px;
+}

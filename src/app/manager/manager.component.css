@@ -1,0 +1,176 @@
+body{
+    background-color: #B7D4FF;
+    width: 100%;
+    height: 800px;
+    padding: 0px;
+}
+header{
+margin-left: 200px;
+margin-right: 200px;
+}
+.headerOfPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.exit{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.exit img{
+    width: 36px;
+    width: 36px;
+}
+
+.listOfBooks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-logo{
+    width: 50px;
+    height: 50px;
+    background-color: #2869CA;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host ::ng-deep .table {
+    border: 1px solid black;
+    background-color: white;
+}
+.add-book__container{
+    text-align: end;
+    padding: 50px 200px;
+}
+:host ::ng-deep .add-book__container button{
+    height: 50px;
+    width: 220px;
+    background-color: #2869CA;
+    color: #FFFFFF;
+
+}
+
+
+.modal-overlay {
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    z-index: 10;
+ }
+
+
+.showAddBook-container{
+    width: 850px;
+    height: 380px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.header-showAddBook{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: unset;
+}
+
+.header-showAddBook h1{
+    font-size: 18px;
+    color: #429FFD;
+}
+
+p{
+    color: #429FFD;
+}
+
+.close{
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    background-color: #F5F9FF;
+    cursor: pointer;
+}
+
+.form{
+    margin: 34px 28px 65px 50px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.price-box{
+    display: flex;
+    flex-direction: row;
+    gap: 11px   ;
+}
+
+.quantity-box{
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    align-items: center;
+    width: 275px;
+}
+
+:host ::ng-deep .input-quantity .p-inputnumber-input {
+    width: 157px;
+}
+
+input{
+    height: 45px;
+}
+
+p-input-number{
+    height: 45px;
+}
+
+.money-logo{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: #B3D4FF;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+:host ::ng-deep .field button{
+    background-color: #2869CA;
+    color: #FFFFFF;
+    border: none;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-addBook{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+:host ::ng-deep .btn-addBook button{
+    background-color: #2869CA;
+    color: #FFFFFF;
+    border: none;
+}
