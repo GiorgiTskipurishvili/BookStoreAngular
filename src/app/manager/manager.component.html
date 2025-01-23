@@ -52,7 +52,7 @@
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-item>
-                    <tr>
+                    <tr (click)="openUpdateModal(item)">
                         <td>{{ item.title }}</td>
                         <td>{{ item.author }}</td>
                         <td>{{ item.price }}</td>
@@ -72,7 +72,7 @@
 
 
 <div (click)="togleAddButtonModal()"  *ngIf="isAddButtonModalOpen" class="modal-overlay"></div>
-<div class="showAddBook-container" (toggle)="togleAddButtonModal()" *ngIf="isAddButtonModalOpen">
+<div class="showAddBook-container" (toggle)="togleAddButtonModal()" *ngIf="isAddButtonModalOpen" >
     <div class="form">
         <div class="header-showAddBook">
             <h1>+ წიგნის დამატება:</h1> 
@@ -102,7 +102,7 @@
         <div class="row">
             <div class="field">
                 <p>ავტორი</p>
-                <input type="text" pInputText [(ngModel)]="newBook.title" />
+                <input type="text" pInputText [(ngModel)]="newBook.author" />
             </div>
             <div class="field">
                 <p>რაოდენობა</p>
@@ -121,10 +121,58 @@
    
 </div>
 
-<div class="showUpdate-container">
 
-    
-    
+<div (click)="togleUpdateModal()"  *ngIf="isUpdateModalOpen" class="modal-overlay"></div>
+<div class="showUpdate-container" (toggle)="togleUpdateModal()" *ngIf="isUpdateModalOpen">
+    <div class="form">
+        <div class="header-showUpdate">
+            <div class="headerofupdate">
+            <img src="assets/pen.svg" alt="">
+            <h1>რედაქტირება</h1>                
+            </div>
+            <div class="close" (click)="togleUpdateModal()" *ngIf="isUpdateModalOpen"><img src="assets/close.svg" alt=""></div>
+        </div>
+        
+        <div class="row">
+            <div class="field">
+                <p>დასახელება</p>
+                <input type="text" pInputText [(ngModel)]="newBook.title" />
+            </div>
+            <div class="field">
+                <p>ფასი</p>
+                <div class="price-box">
+                    <p-input-number [(ngModel)]="newBook.price" ></p-input-number>                    
+                    <div class="money-logo">
+                        <img src="assets/lari.svg" alt="">
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <p>ავტორი</p>
+                <input type="text" pInputText [(ngModel)]="newBook.author" />
+            </div>
+            <div class="field">
+                <p>რაოდენობა</p>
+                <div class="quantity-box">
+                    <p-input-number [(ngModel)]="newBook.quantity" [disabled]="true"></p-input-number> 
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <div class="btn-save">
+                <p-button class="save-button" label="შენახვა" severity="info" ><img src="assets/pen.svg" alt=""></p-button>
+            </div>
+            <div class="btn-delete">
+               <p-button severity="danger"><img src="assets/delete.svg" alt=""></p-button>
+            </div>
+        </div>
+
+    </div>
+     
 </div>
 
 

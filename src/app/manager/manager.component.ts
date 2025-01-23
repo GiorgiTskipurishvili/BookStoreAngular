@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './manager.component.css'
 })
 export class ManagerComponent {
+  isAddButtonModalOpen:boolean =false;
+  isUpdateModalOpen:boolean=false;
+
+
 
   newBook = {
     title: '',
@@ -16,7 +20,6 @@ export class ManagerComponent {
     quantity: 0
   };
 
-  isAddButtonModalOpen:boolean =false;
 
 
   items = [
@@ -42,4 +45,18 @@ export class ManagerComponent {
       this.newBook.quantity--;
     }
   }
+
+
+
+//Update
+togleUpdateModal(){
+  this.isUpdateModalOpen = !this.isUpdateModalOpen;
+}
+
+openUpdateModal(item:any){
+  this.newBook={...item};
+  this.isUpdateModalOpen = true;
+}
+
+
 }
