@@ -1,1 +1,72 @@
-<p>user works!</p>
+<body>
+    <header>
+        <div class="main-container">
+            <div class="headerOfPage">
+                <h1>მომხმარებელი</h1>
+                <div class="exit" [routerLink]="['']">
+                    <h1>სისტემიდან გასვლა</h1>
+                    <img src="assets/exit.png" alt="exit">
+                </div>
+            </div>
+
+
+
+            <div class="header-look_container">
+                <div class="listOfBooks">
+                    <div class="img-logo">
+                        <img src="assets/logo.svg" alt="">                    
+                    </div>
+
+                    <h3>წიგნების ჩამონათვალი</h3>
+                </div>
+
+
+                <div class="inputName">
+                    <p>შეიყვანეთ თქვენი სახელი</p>
+                    <input type="text" pInputText>
+                </div>
+
+                <div class="btn-basket">
+                    <p-button label="ჩემი კალათა/შეკვეთები" severity="info" ><img src="assets/basket.svg" alt=""></p-button>
+                </div>
+            </div>
+
+        </div>
+     </header>
+
+
+     <div class="main-container">
+
+        <div class="book-info_container">
+            <div class="info">
+                <div class="book-img">
+                    <img src="assets/book.svg" alt="">
+                </div>
+
+                <div class="book-details">
+                    <div class="descriptions">
+                        <!-- <p>დასახელება: </p>
+                        <p>ცცცცც</p> -->
+                        <p>დასახელება: <span>ცცცც</span></p>
+                        <p>ავტორი: <span>ცცცც</span></p>
+                        <p>აოდენობა: <span>ცცცც</span></p>
+                        <p>ფასი: <span>ცცცც</span></p>
+                    </div>
+
+                    <div class="btn-quantity">
+                        <p-button label="-"></p-button>
+                        <p-input-number class="quantity"></p-input-number>
+                        <p-button label="+"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+     </div>
+
+
+
+
+
+</body>
